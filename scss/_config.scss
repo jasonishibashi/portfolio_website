@@ -1,0 +1,29 @@
+// Variables
+$website-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+$bg-image: url('../img/showcase.jpg');
+
+// Set Text Color
+@function set-text-color($color) {
+  @if(lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set both background and color information
+@mixin auto-background-color($color) {
+  background: $color;
+  color: set-text-color($color);  
+}
+
+// Same height width and line-height
+@mixin height-width-lineheight($value-px) {
+  height: $value-px;
+  width: $value-px;
+  line-height: $value-px;
+}
